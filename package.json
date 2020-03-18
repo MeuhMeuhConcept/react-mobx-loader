@@ -1,0 +1,40 @@
+{
+  "name": "react-mobx-loader",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "typings": "src/js/index",
+  "repository": "git@github.com:MeuhMeuhConcept/react-mobx-loader.git",
+  "author": "jngermon <jn.germon@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "concurrently -k -n \"Typescript,Eslint\" -p \"[{name}]\" -c \"blue,green\" \"tsc --watch\" \"esw --watch --ext=.ts,.tsx src/js/*\"",
+    "eslint": "eslint --ext=.ts,.tsx src/js/*",
+    "build": "tsc",
+    "test": "jest --verbose"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^25.1.4",
+    "@types/lodash": "^4.14.149",
+    "@types/react": "^16.9.23",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-watch": "^6.0.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.8",
+    "react": "^16.13.0",
+    "rich-agent": "^1.0.3"
+  }
+}
