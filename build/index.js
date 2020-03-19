@@ -16,5 +16,7 @@ const loading_screen_1 = __importDefault(require("./loading-screen"));
 exports.LoadingScreen = loading_screen_1.default;
 const LoaderRequest = __importStar(require("./loader-request"));
 exports.LoaderRequest = LoaderRequest;
+const json_loader_1 = require("./json-loader");
+exports.JsonLoader = json_loader_1.JsonLoader;
 const simple_loader_1 = require("./simple-loader");
 exports.SimpleLoader = simple_loader_1.SimpleLoader;
