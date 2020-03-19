@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { observer } from 'mobx-react'
-import { LoaderRequestInformations } from './loader-request'
+import * as LoaderRequest from './loader-request'
 import LoadingScreen from './loading-screen'
 import cn from 'classnames'
 
 interface Props {
-    loadingInformation: LoaderRequestInformations,
+    loadingInformation: LoaderRequest.Informations,
     translateError?: (message: string) => string
     loaderSize?: 'sm' | 'md' | 'lg' | 'xl'
 }

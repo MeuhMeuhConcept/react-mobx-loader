@@ -1,18 +1,10 @@
 import { BasicRequest, Request } from 'rich-agent'
-import { LoaderRequest } from './loader-request'
+import * as LoaderRequest from './loader-request'
 import { observable, action } from 'mobx'
 
-export interface RequestSettings {
-    url: string
-    method?: 'GET' | 'POST' | 'PUT' | 'DELETE'
-    data?: {[key: string]: string | number | boolean}
-    headers?: {[key: string]: string}
-    dataType?: 'text' | 'json'
-}
+export class SimpleLoader extends BasicRequest implements LoaderRequest.Request {
 
-export class SimpleLoader extends BasicRequest implements LoaderRequest {
-
-    @observable status: Request.Status = 'waiting'
+    @observable status: LoaderRequest.Status = 'waiting'
     @observable progress: number = 0
 
     constructor (url: string, autoLoad: boolean = true) {

@@ -1,9 +1,11 @@
-import { Request } from 'rich-agent'
+import { Request as BaseRequest } from 'rich-agent'
 
-export interface LoaderRequestInformations extends Request.RequestInformations {
+export interface Informations extends BaseRequest.RequestInformations {
 
 }
 
-export interface LoaderRequest extends Request.Request {
+export type Status = BaseRequest.Status
+
+export interface Request extends BaseRequest.Request {
     load (): void
 }
