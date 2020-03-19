@@ -1,15 +1,9 @@
-import { SimpleLoader } from './simple-loader'
+import { ApiRequest } from 'rich-agent'
+import { CustomLoader } from './custom-loader'
 
-export class JsonLoader extends SimpleLoader {
+export class JsonLoader extends CustomLoader {
 
-    transformResponseData (data: string): boolean {
-        try {
-            this._responseData = JSON.parse(this._responseData)
-        } catch (e) {
-            this._responseTextStatus = 'json_parse_error'
-            return false
-        }
-
-        return true
+    constructor (url: string, autoLoad: boolean = true) {
+        super(new ApiRequest(url), autoLoad)
     }
 }

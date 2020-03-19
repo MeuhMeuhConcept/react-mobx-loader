@@ -1,29 +1,9 @@
-import { BasicRequest, Request } from 'rich-agent'
-import * as LoaderRequest from './loader-request'
-import { observable, action } from 'mobx'
+import { BasicRequest } from 'rich-agent'
+import { CustomLoader } from './custom-loader'
 
-export class SimpleLoader extends BasicRequest implements LoaderRequest.Request {
-
-    @observable status: LoaderRequest.Status = 'waiting'
-    @observable progress: number = 0
+export class SimpleLoader extends CustomLoader {
 
     constructor (url: string, autoLoad: boolean = true) {
-        super(url, 'GET')
-
-        this.onProgress(action((progress: number) => {
-            this.progress = progress
-        }))
-
-        this.onStatusChange(action((status: Request.Status) => {
-            this.status = status
-        }))
-
-        if (autoLoad) {
-            this.load()
-        }
-    }
-
-    load() {
-        this.send()
+        super(new BasicRequest(url), autoLoad)
     }
 }
