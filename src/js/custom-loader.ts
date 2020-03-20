@@ -17,6 +17,10 @@ export class CustomLoader extends PrivateLoader implements LoaderRequest.Request
         return this._request
     }
 
+    get responseData (): any | null {
+        return this._request.responseData
+    }
+
     load(): Promise<Response.Response> {
         return this._request.send()
     }

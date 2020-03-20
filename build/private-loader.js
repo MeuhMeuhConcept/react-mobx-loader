@@ -17,8 +17,8 @@ export class PrivateLoader {
             this.status = status;
         }));
     }
-    get responseData() {
-        return this._request.responseData;
+    get errors() {
+        return this._request.errors;
     }
 }
 __decorate([

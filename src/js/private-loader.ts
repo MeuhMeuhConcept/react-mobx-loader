@@ -2,7 +2,7 @@ import { Request } from 'rich-agent'
 import * as LoaderRequest from './loader-request'
 import { observable, action } from 'mobx'
 
-export class PrivateLoader implements LoaderRequest.PrivateRequest {
+export class PrivateLoader implements LoaderRequest.Informations {
 
     @observable status: LoaderRequest.Status = 'waiting'
     @observable progress: number = 0
@@ -22,7 +22,7 @@ export class PrivateLoader implements LoaderRequest.PrivateRequest {
         }))
     }
 
-    get responseData (): any | null {
-        return this._request.responseData
+    get errors (): string[] {
+        return this._request.errors
     }
 }

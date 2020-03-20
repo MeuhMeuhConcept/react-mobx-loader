@@ -9,6 +9,9 @@ export class CustomLoader extends PrivateLoader {
     get request() {
         return this._request;
     }
+    get responseData() {
+        return this._request.responseData;
+    }
     load() {
         return this._request.send();
     }
