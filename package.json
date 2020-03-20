@@ -1,6 +1,6 @@
 {
   "name": "react-mobx-loader",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "main": "build/index.js",
   "typings": "build/index",
   "repository": "git@github.com:MeuhMeuhConcept/react-mobx-loader.git",

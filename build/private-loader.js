@@ -9,16 +9,20 @@ export class PrivateLoader {
     constructor(request) {
         this.status = 'waiting';
         this.progress = 0;
+        this.errors = [];
         this._request = request;
         this._request.onProgress(action((progress) => {
             this.progress = progress;
         }));
         this._request.onStatusChange(action((status) => {
             this.status = status;
+            this.errors.splice(0);
+            if (status === 'error') {
+                for (const err of this._request.errors) {
+                    this.errors.push(err);
+                }
+            }
         }));
-    }
-    get errors() {
-        return this._request.errors;
     }
 }
 __decorate([
@@ -27,3 +31,6 @@ __decorate([
 __decorate([
     observable
 ], PrivateLoader.prototype, "progress", void 0);
+__decorate([
+    observable
+], PrivateLoader.prototype, "errors", void 0);

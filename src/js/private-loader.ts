@@ -6,6 +6,7 @@ export class PrivateLoader implements LoaderRequest.Informations {
 
     @observable status: LoaderRequest.Status = 'waiting'
     @observable progress: number = 0
+    @observable errors: string[] = []
 
     protected _request: Request.Request
 
@@ -19,10 +20,13 @@ export class PrivateLoader implements LoaderRequest.Informations {
 
         this._request.onStatusChange(action((status: Request.Status) => {
             this.status = status
-        }))
-    }
 
-    get errors (): string[] {
-        return this._request.errors
+            this.errors.splice(0)
+            if (status === 'error') {
+                for (const err of this._request.errors) {
+                    this.errors.push(err)
+                }
+            }
+        }))
     }
 }

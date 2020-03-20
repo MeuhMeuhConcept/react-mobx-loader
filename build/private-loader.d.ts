@@ -3,7 +3,7 @@ import * as LoaderRequest from './loader-request';
 export declare class PrivateLoader implements LoaderRequest.Informations {
     status: LoaderRequest.Status;
     progress: number;
+    errors: string[];
     protected _request: Request.Request;
     constructor(request: Request.Request);
-    get errors(): string[];
 }
