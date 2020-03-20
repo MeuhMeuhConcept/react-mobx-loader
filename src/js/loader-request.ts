@@ -1,4 +1,4 @@
-import { Request as BaseRequest } from 'rich-agent'
+import { Request as BaseRequest, Response } from 'rich-agent'
 
 export interface Informations extends BaseRequest.RequestInformations {
 
@@ -6,9 +6,12 @@ export interface Informations extends BaseRequest.RequestInformations {
 
 export type Status = BaseRequest.Status
 
-export interface Request {
+export interface PrivateRequest {
     readonly responseData: any | null
-    load (): void
+}
+
+export interface Request extends PrivateRequest {
+    load (): Promise<Response.Response>
     request: BaseRequest.Request
 }
 
