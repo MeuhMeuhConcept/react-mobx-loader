@@ -20,7 +20,7 @@ export default class LoadingScreen extends React.Component {
                 break;
         }
         return (React.createElement("div", { className: cn('loading-screen', 'text-center', className) },
-            React.createElement("div", { className: "loading-screen-indicator" }, progress === 0 ? (React.createElement("i", { className: cn('mdi mdi-loading mdi-spin', classSize), "aria-hidden": "true" })) : (React.createElement("div", { className: "progress", style: { height: '1px' } },
+            React.createElement("div", { className: "loading-screen-indicator" }, (progress === 0 || progress === undefined) ? (React.createElement("i", { className: cn('mdi mdi-loading mdi-spin', classSize), "aria-hidden": "true" })) : (React.createElement("div", { className: "progress", style: { height: '1px' } },
                 React.createElement("div", { className: cn('progress-bar', 'bg-primary'), role: "progressbar", style: { width: progress + '%' } }))))));
     }
 }

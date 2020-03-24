@@ -35,7 +35,7 @@ export default class LoadingScreen extends React.Component<Props, State> {
         return (
             <div className={cn('loading-screen', 'text-center', className)}>
                 <div className="loading-screen-indicator">
-                    { progress === 0 ? (
+                    { (progress === 0 || progress === undefined) ? (
                         <i className={cn('mdi mdi-loading mdi-spin', classSize)} aria-hidden="true"></i>
                     ) : (
                         <div className="progress" style={{ height: '1px' }}>
