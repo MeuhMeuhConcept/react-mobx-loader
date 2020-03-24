@@ -4,6 +4,7 @@ interface Props {
     loadingInformation: LoaderRequest.Informations;
     translateError?: (message: string) => string;
     loaderSize?: 'sm' | 'md' | 'lg' | 'xl';
+    loadingClassname?: string;
 }
 interface State {
 }
