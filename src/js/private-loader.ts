@@ -6,6 +6,7 @@ export class PrivateLoader implements LoaderRequest.Informations {
 
     @observable status: LoaderRequest.Status = 'waiting'
     @observable progress: number = 0
+    @observable uploadProgress: number = 0
     @observable errors: string[] = []
 
     protected _request: Request.Request
@@ -17,6 +18,8 @@ export class PrivateLoader implements LoaderRequest.Informations {
         this._request.onProgress(action((progress: number, direction: 'up' | 'down') => {
             if (direction === 'down') {
                 this.progress = progress
+            } else {
+                this.uploadProgress = progress
             }
         }))
 

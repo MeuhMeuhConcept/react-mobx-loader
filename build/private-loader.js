@@ -9,11 +9,15 @@ export class PrivateLoader {
     constructor(request) {
         this.status = 'waiting';
         this.progress = 0;
+        this.uploadProgress = 0;
         this.errors = [];
         this._request = request;
         this._request.onProgress(action((progress, direction) => {
             if (direction === 'down') {
                 this.progress = progress;
+            }
+            else {
+                this.uploadProgress = progress;
             }
         }));
         this._request.onStatusChange(action((status) => {
@@ -33,6 +37,9 @@ __decorate([
 __decorate([
     observable
 ], PrivateLoader.prototype, "progress", void 0);
+__decorate([
+    observable
+], PrivateLoader.prototype, "uploadProgress", void 0);
 __decorate([
     observable
 ], PrivateLoader.prototype, "errors", void 0);
