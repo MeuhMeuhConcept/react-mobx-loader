@@ -11,8 +11,10 @@ export class PrivateLoader {
         this.progress = 0;
         this.errors = [];
         this._request = request;
-        this._request.onProgress(action((progress) => {
-            this.progress = progress;
+        this._request.onProgress(action((progress, direction) => {
+            if (direction === 'down') {
+                this.progress = progress;
+            }
         }));
         this._request.onStatusChange(action((status) => {
             this.status = status;

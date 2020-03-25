@@ -3480,10 +3480,10 @@ ret@~0.1.10:
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
-rich-agent@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/rich-agent/-/rich-agent-1.1.0.tgz#0f53af42ef640a5a25f6a7638d05f66f8f47dc27"
-  integrity sha512-/3zVrI6p09gQUH7L85240paQNfFe6/szXOksXo6CQFKmq3jlEaW2N+kZIihJxxY0z+FZc8sVl+4369vq9tmi8A==
+rich-agent@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/rich-agent/-/rich-agent-1.3.1.tgz#37a871d50161a59bd85ed506700f0cbe6347acab"
+  integrity sha512-kyWKjCZ/jLHn66kknfY98KxLhqJc2BPGfq8Of2UrKuB1uUWplXLUddzeUzOWcKCdk8ZCyT30WElmNAUGKk0n9g==
 
 rimraf@2.6.3:
   version "2.6.3"

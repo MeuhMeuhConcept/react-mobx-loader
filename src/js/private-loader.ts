@@ -14,8 +14,10 @@ export class PrivateLoader implements LoaderRequest.Informations {
 
         this._request = request
 
-        this._request.onProgress(action((progress: number) => {
-            this.progress = progress
+        this._request.onProgress(action((progress: number, direction: 'up' | 'down') => {
+            if (direction === 'down') {
+                this.progress = progress
+            }
         }))
 
         this._request.onStatusChange(action((status: Request.Status) => {
