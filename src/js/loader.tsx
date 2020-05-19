@@ -9,6 +9,7 @@ interface Props {
     translateError?: (message: string) => string
     loaderSize?: 'sm' | 'md' | 'lg' | 'xl'
     loadingClassname?: string
+    loadingScreen?: React.ComponentClass
 }
 
 interface State {
@@ -46,6 +47,9 @@ export default class Loader extends React.Component<Props, State> {
     }
 
     renderPending () {
+        if (this.props.loadingScreen) {
+            return React.createElement(this.props.loadingScreen)
+        }
         return (
             <LoadingScreen progress={this.props.loadingInformation.progress} size={this.props.loaderSize} className={this.props.loadingClassname}/>
         )

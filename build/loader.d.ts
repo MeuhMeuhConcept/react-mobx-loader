@@ -5,6 +5,7 @@ interface Props {
     translateError?: (message: string) => string;
     loaderSize?: 'sm' | 'md' | 'lg' | 'xl';
     loadingClassname?: string;
+    loadingScreen?: React.ComponentClass;
 }
 interface State {
 }

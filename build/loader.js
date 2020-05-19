@@ -31,6 +31,9 @@ let Loader = class Loader extends React.Component {
         return (React.createElement(React.Fragment, null));
     }
     renderPending() {
+        if (this.props.loadingScreen) {
+            return React.createElement(this.props.loadingScreen);
+        }
         return (React.createElement(LoadingScreen, { progress: this.props.loadingInformation.progress, size: this.props.loaderSize, className: this.props.loadingClassname }));
     }
     renderError() {
