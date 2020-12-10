@@ -1,5 +1,7 @@
-import { PrivateLoader } from './private-loader';
-export class CustomLoader extends PrivateLoader {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const private_loader_1 = require("./private-loader");
+class CustomLoader extends private_loader_1.PrivateLoader {
     constructor(request, autoLoad = true) {
         super(request);
         if (autoLoad) {
@@ -16,3 +18,4 @@ export class CustomLoader extends PrivateLoader {
         return this._request.send();
     }
 }
+exports.CustomLoader = CustomLoader;
