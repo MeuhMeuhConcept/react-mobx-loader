@@ -20,11 +20,15 @@ const React = __importStar(require("react"));
 const mobx_react_1 = require("mobx-react");
 const loading_screen_1 = __importDefault(require("./loading-screen"));
 const classnames_1 = __importDefault(require("classnames"));
+const manager_1 = require("./manager");
 let Loader = class Loader extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
+        if (this.props.contentStrategy === 'show' || (!this.props.contentStrategy && manager_1.Manager.contentStrategy === 'show')) {
+            return this.renderDone();
+        }
         switch (this.props.loadingInformation.status) {
             case 'waiting':
                 return this.renderWaiting();

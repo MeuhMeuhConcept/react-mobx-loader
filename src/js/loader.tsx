@@ -3,6 +3,7 @@ import { observer } from 'mobx-react'
 import * as LoaderRequest from './loader-request'
 import LoadingScreen from './loading-screen'
 import cn from 'classnames'
+import { Manager, ContentStrategy } from './manager'
 
 interface Props {
     loadingInformation: LoaderRequest.Informations,
@@ -10,6 +11,7 @@ interface Props {
     loaderSize?: 'sm' | 'md' | 'lg' | 'xl'
     loadingClassname?: string
     loadingScreen?: React.ComponentClass
+    contentStrategy?: ContentStrategy
 }
 
 interface State {
@@ -24,6 +26,10 @@ export default class Loader extends React.Component<Props, State> {
     }
 
     render () {
+        if (this.props.contentStrategy === 'show' || (!this.props.contentStrategy && Manager.contentStrategy === 'show')) {
+            return this.renderDone()
+        }
+
         switch (this.props.loadingInformation.status) {
         case 'waiting':
             return this.renderWaiting()

@@ -11,5 +11,3 @@ export interface Request extends Informations {
     load (): Promise<Response.Response>
     request: BaseRequest.Request
 }
-
-

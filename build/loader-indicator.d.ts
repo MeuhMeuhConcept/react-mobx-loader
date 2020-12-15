@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as LoaderRequest from './loader-request';
+import { ContentStrategy } from './manager';
 interface Props {
     loadingInformation: LoaderRequest.Informations;
     waiting?: string | false;
@@ -7,6 +8,7 @@ interface Props {
     error?: string | false;
     canceled?: string | false;
     done?: string | false;
+    contentStrategy?: ContentStrategy;
 }
 interface State {
 }

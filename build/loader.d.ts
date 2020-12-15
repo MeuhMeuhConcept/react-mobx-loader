@@ -1,11 +1,13 @@
 import * as React from 'react';
 import * as LoaderRequest from './loader-request';
+import { ContentStrategy } from './manager';
 interface Props {
     loadingInformation: LoaderRequest.Informations;
     translateError?: (message: string) => string;
     loaderSize?: 'sm' | 'md' | 'lg' | 'xl';
     loadingClassname?: string;
     loadingScreen?: React.ComponentClass;
+    contentStrategy?: ContentStrategy;
 }
 interface State {
 }
