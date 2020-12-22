@@ -1,6 +1,6 @@
 {
   "name": "react-mobx-loader",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "main": "build/index.js",
   "typings": "build/index",
   "repository": "git@github.com:MeuhMeuhConcept/react-mobx-loader.git",
@@ -32,7 +32,7 @@
     "classnames": "^2.2.6",
     "mobx": "^5.15.4",
     "mobx-react": "^6.1.8",
-    "react": "^16.13.0",
+    "react": "^17.0.1",
     "rich-agent": "^2.3.0"
   },
   "resolutions": {
