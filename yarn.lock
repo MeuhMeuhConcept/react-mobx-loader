@@ -3542,10 +3542,10 @@ ret@~0.1.10:
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
-rich-agent@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/rich-agent/-/rich-agent-2.3.0.tgz#7df1ed25c745e00bc24033a446cc1354f9d6924e"
-  integrity sha512-kPEbOWc3GJazMfM+Xv36Wfoc/pcP7ADOJi5VdgEZEZv8Hn89dXW7ZCWviHO80+fitl6wAMSoYHKDVM1X7BQH1A==
+rich-agent@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/rich-agent/-/rich-agent-2.5.0.tgz#b1ccb4c792dd5bd48bb51f0a208ff647b2574c43"
+  integrity sha512-RxK9Pfm5fqy10rVwsveJ9WQNzExP+4KFz678mfqQz18p7N74gIzEsCyRvlIRS8Wy6UWs0ETSpf2JjMXW7pFMKg==
   dependencies:
     superagent "^6.1.0"
 
